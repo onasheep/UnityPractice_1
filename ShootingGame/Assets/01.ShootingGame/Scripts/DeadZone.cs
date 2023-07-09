@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class DeadZone : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag.Equals("Enemy"))
+        {
+            Destroy(other.gameObject);
+        }
+
+        if(other.tag.Equals("Bullet"))
         {
             Destroy(other.gameObject);
         }
